@@ -21,9 +21,8 @@ public class InputController: IMovementInputsProvider
         _inputs.Enable();        
     }
 
-    public PlayerInputs.MovementInputsActions GetMovingActions()
+    public Vector2 GetMovingVector()
     {
-        return _moving;
-    }
-    
+        return _moving.Move.ReadValue<Vector2>();
+    }    
 }
