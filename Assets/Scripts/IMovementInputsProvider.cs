@@ -1,6 +1,7 @@
-﻿using UnityEngine.InputSystem;
+﻿
+using UnityEngine;
 
 public interface IMovementInputsProvider
 {
-    PlayerInputs.MovementInputsActions GetMovingActions();
+    Vector2 GetMovingVector();
 }

@@ -14,18 +14,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Transform _transfrom; 
-    private Camera _cam;    
-    private PlayerInputs.MovementInputsActions _actions;
+    private Camera _cam;
+    private IMovementInputsProvider _inputs;
     private float speed = 5f;
 
     public void Initialize(IMovementInputsProvider moveInputs)
     {
-        _actions = moveInputs.GetMovingActions();
+        _inputs = moveInputs;
     }
 
     private void Update()
     {
-        Move(_actions.Move.ReadValue<Vector2>());
+        Move(_inputs.GetMovingVector());
     }
 
     private void Move(Vector2 moveVector)
