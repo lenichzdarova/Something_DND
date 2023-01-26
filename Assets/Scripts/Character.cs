@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character
+public class Character : IInventoryDataProvider
 {
     private RaceType _characterRace;
     private ClassType _characterClass;

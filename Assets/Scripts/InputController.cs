@@ -1,6 +1,5 @@
 
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 /// <summary>
 /// the highest player input layer class
@@ -9,20 +8,21 @@ using UnityEngine.InputSystem;
 /// possybly need to decompose by interfaces by action types
 /// </summary>
 
-public class InputController: IMovementInputsProvider
+public class InputController: IMovementInputsProvider, IUIInputsProvider
 {    
     private PlayerInputs _inputs;
-    private PlayerInputs.MovementInputsActions _moving;    
+    private PlayerInputs.MovementInputsActions _moving;
+    private PlayerInputs.UIInputsActions _UI;
 
     public InputController()
     {        
         _inputs = new PlayerInputs();        
         _moving = _inputs.MovementInputs;
+        _UI = _inputs.UIInputs;
         _inputs.Enable();        
     }
 
-    public Vector2 GetMovingVector()
-    {
-        return _moving.Move.ReadValue<Vector2>();
-    }    
+    public PlayerInputs.MovementInputsActions GetMovementInputs() { return _moving; }
+
+    public PlayerInputs.UIInputsActions GetUIInputs() { return _UI; }
 }

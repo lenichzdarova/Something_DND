@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class SceneLauncher : MonoBehaviour
 {
-    [SerializeField] Player _player;
-    private UISystem _ui; 
+    [SerializeField] PlayerMovement _player;
+    private InputController _inputController;
+    private UIController _ui; 
     private GameData _gameData;
     
 
@@ -16,7 +17,9 @@ public class SceneLauncher : MonoBehaviour
 
     private void Initialize()
     {
-        _ui = new UISystem(_player);
+        _inputController = new InputController();
+        _player.Initialize(_inputController);
         _gameData = new GameData();
+        _ui = new UIController(_inputController,_gameData.GetInventoryData());        
     }
 }

@@ -38,12 +38,12 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Look"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""ca4cf7cc-701f-4f14-8a7e-9e9267df85c8"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 },
                 {
                     ""name"": ""Jump"",
@@ -124,12 +124,40 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""12a570ce-84e9-4fb3-9fa3-4c80c59656df"",
-                    ""path"": """",
+                    ""id"": ""49fd8ba2-a7a7-42b7-b134-96db9bf8216f"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""UIInputs"",
+            ""id"": ""01876577-7803-4771-9f7c-d72db278064b"",
+            ""actions"": [
+                {
+                    ""name"": ""Inventory"",
+                    ""type"": ""Button"",
+                    ""id"": ""cc40b155-e43e-4ed2-a05e-17553e95cd5b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ccc28daf-4d74-4b87-8159-17a89627c9b0"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Inventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -143,6 +171,9 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         m_MovementInputs_Move = m_MovementInputs.FindAction("Move", throwIfNotFound: true);
         m_MovementInputs_Look = m_MovementInputs.FindAction("Look", throwIfNotFound: true);
         m_MovementInputs_Jump = m_MovementInputs.FindAction("Jump", throwIfNotFound: true);
+        // UIInputs
+        m_UIInputs = asset.FindActionMap("UIInputs", throwIfNotFound: true);
+        m_UIInputs_Inventory = m_UIInputs.FindAction("Inventory", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -247,10 +278,47 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         }
     }
     public MovementInputsActions @MovementInputs => new MovementInputsActions(this);
+
+    // UIInputs
+    private readonly InputActionMap m_UIInputs;
+    private IUIInputsActions m_UIInputsActionsCallbackInterface;
+    private readonly InputAction m_UIInputs_Inventory;
+    public struct UIInputsActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public UIInputsActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Inventory => m_Wrapper.m_UIInputs_Inventory;
+        public InputActionMap Get() { return m_Wrapper.m_UIInputs; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(UIInputsActions set) { return set.Get(); }
+        public void SetCallbacks(IUIInputsActions instance)
+        {
+            if (m_Wrapper.m_UIInputsActionsCallbackInterface != null)
+            {
+                @Inventory.started -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnInventory;
+                @Inventory.performed -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnInventory;
+                @Inventory.canceled -= m_Wrapper.m_UIInputsActionsCallbackInterface.OnInventory;
+            }
+            m_Wrapper.m_UIInputsActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Inventory.started += instance.OnInventory;
+                @Inventory.performed += instance.OnInventory;
+                @Inventory.canceled += instance.OnInventory;
+            }
+        }
+    }
+    public UIInputsActions @UIInputs => new UIInputsActions(this);
     public interface IMovementInputsActions
     {
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+    }
+    public interface IUIInputsActions
+    {
+        void OnInventory(InputAction.CallbackContext context);
     }
 }
