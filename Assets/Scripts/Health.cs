@@ -1,9 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
+
 
 public class Health 
 {
+    public event Action<int> HealthChange;
+    public event Action<int> MaxHealthChange;
+
     private int _maxHealth;
     private int _currentHealth;
 
@@ -22,5 +24,15 @@ public class Health
         {
             //check endurance bonus for unconscious or death
         }
+    }
+
+    public int GetHealth()
+    {
+        return _currentHealth;
+    }
+
+    public int GetMaxHealth()
+    {
+        return _maxHealth;
     }
 }

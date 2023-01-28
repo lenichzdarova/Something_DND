@@ -140,6 +140,134 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Selector",
+            "id": "99c67321-fa39-4f57-8de4-90cd61cefe9a",
+            "actions": [
+                {
+                    "name": "SelectFirst",
+                    "type": "Button",
+                    "id": "f6d50e1e-86c5-4063-afed-6af85f272887",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectSecond",
+                    "type": "Button",
+                    "id": "fcb3a90f-4272-4296-a3e6-6c6f2fd454f1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectThird",
+                    "type": "Button",
+                    "id": "2f71adbc-92f5-4587-ad42-d53e7168a7c7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectFourth",
+                    "type": "Button",
+                    "id": "fd2454bc-933b-4977-ae0f-7d40c64912b0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectFifth",
+                    "type": "Button",
+                    "id": "991fc3a7-61af-4b74-bd24-8d844a775747",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "SelectSixth",
+                    "type": "Button",
+                    "id": "d2754345-1834-496b-a2b9-593e4ab37108",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c686ff76-0d18-45ae-9e3c-866a846489a2",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectFirst",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ed9ae376-2a93-4c7c-a557-1b4cb1cdd93c",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectSecond",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82243c7d-1a93-4e93-beea-586292579536",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectThird",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "daed7382-8547-4375-9c23-0c31814970aa",
+                    "path": "<Keyboard>/4",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectFourth",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "10c7fe28-8541-4b8a-9994-d2abecd84a83",
+                    "path": "<Keyboard>/5",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectFifth",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "caee03b8-fd77-4173-8b13-117726ed703d",
+                    "path": "<Keyboard>/6",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SelectSixth",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

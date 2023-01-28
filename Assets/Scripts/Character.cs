@@ -1,14 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : IInventoryDataProvider
 {
-    private RaceType _characterRace;
-    private ClassType _characterClass;
-    private CharacterStats _stats;
+    private readonly RaceType _characterRace;
+    private readonly ClassType _characterClass;
+    private readonly CharacterStats _stats;
+    private readonly Sprite _portrait;
 
-    private Health _health;
+    private readonly Health _health;
 
     public int GetAttack()
     {
@@ -32,4 +34,9 @@ public class Character : IInventoryDataProvider
         //return summary
         return stats;
     }
+
+    public Sprite GetPortrait()
+    {
+        return _portrait;
+    }    
 }

@@ -10,18 +10,18 @@ using UnityEngine.InputSystem;
 /// inventoryUI, CharacterSheetUI, etc
 /// </summary>
 
-public class UIController
+public class UIController : MonoBehaviour 
 {
     private PlayerInputs.UIInputsActions _input;    
-    private InventoryUI _inventory; //notimplemented yet it is veiwcontroller and in creates controller and feed inventory to it
+    private InventoryUI _inventory;
 
-    public UIController(IUIInputsProvider inputs, IInventoryDataProvider inventoryData)
+
+    public void Initialize(IUIInputsProvider inputs, IInventoryDataProvider inventoryData)
     {
         _input = inputs.GetUIInputs();
         SubscribeInputs();
         _inventory.Initialize(inventoryData);
-        _input.Inventory.performed += OpenInventory;
-    }
+    }    
     
     private void SubscribeInputs()
     {

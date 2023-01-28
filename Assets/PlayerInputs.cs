@@ -162,6 +162,134 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Selector"",
+            ""id"": ""99c67321-fa39-4f57-8de4-90cd61cefe9a"",
+            ""actions"": [
+                {
+                    ""name"": ""SelectFirst"",
+                    ""type"": ""Button"",
+                    ""id"": ""f6d50e1e-86c5-4063-afed-6af85f272887"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectSecond"",
+                    ""type"": ""Button"",
+                    ""id"": ""fcb3a90f-4272-4296-a3e6-6c6f2fd454f1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectThird"",
+                    ""type"": ""Button"",
+                    ""id"": ""2f71adbc-92f5-4587-ad42-d53e7168a7c7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectFourth"",
+                    ""type"": ""Button"",
+                    ""id"": ""fd2454bc-933b-4977-ae0f-7d40c64912b0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectFifth"",
+                    ""type"": ""Button"",
+                    ""id"": ""991fc3a7-61af-4b74-bd24-8d844a775747"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SelectSixth"",
+                    ""type"": ""Button"",
+                    ""id"": ""d2754345-1834-496b-a2b9-593e4ab37108"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c686ff76-0d18-45ae-9e3c-866a846489a2"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectFirst"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ed9ae376-2a93-4c7c-a557-1b4cb1cdd93c"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectSecond"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""82243c7d-1a93-4e93-beea-586292579536"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectThird"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""daed7382-8547-4375-9c23-0c31814970aa"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectFourth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""10c7fe28-8541-4b8a-9994-d2abecd84a83"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectFifth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""caee03b8-fd77-4173-8b13-117726ed703d"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SelectSixth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
@@ -174,6 +302,14 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         // UIInputs
         m_UIInputs = asset.FindActionMap("UIInputs", throwIfNotFound: true);
         m_UIInputs_Inventory = m_UIInputs.FindAction("Inventory", throwIfNotFound: true);
+        // Selector
+        m_Selector = asset.FindActionMap("Selector", throwIfNotFound: true);
+        m_Selector_SelectFirst = m_Selector.FindAction("SelectFirst", throwIfNotFound: true);
+        m_Selector_SelectSecond = m_Selector.FindAction("SelectSecond", throwIfNotFound: true);
+        m_Selector_SelectThird = m_Selector.FindAction("SelectThird", throwIfNotFound: true);
+        m_Selector_SelectFourth = m_Selector.FindAction("SelectFourth", throwIfNotFound: true);
+        m_Selector_SelectFifth = m_Selector.FindAction("SelectFifth", throwIfNotFound: true);
+        m_Selector_SelectSixth = m_Selector.FindAction("SelectSixth", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -311,6 +447,79 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
         }
     }
     public UIInputsActions @UIInputs => new UIInputsActions(this);
+
+    // Selector
+    private readonly InputActionMap m_Selector;
+    private ISelectorActions m_SelectorActionsCallbackInterface;
+    private readonly InputAction m_Selector_SelectFirst;
+    private readonly InputAction m_Selector_SelectSecond;
+    private readonly InputAction m_Selector_SelectThird;
+    private readonly InputAction m_Selector_SelectFourth;
+    private readonly InputAction m_Selector_SelectFifth;
+    private readonly InputAction m_Selector_SelectSixth;
+    public struct SelectorActions
+    {
+        private @PlayerInputs m_Wrapper;
+        public SelectorActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SelectFirst => m_Wrapper.m_Selector_SelectFirst;
+        public InputAction @SelectSecond => m_Wrapper.m_Selector_SelectSecond;
+        public InputAction @SelectThird => m_Wrapper.m_Selector_SelectThird;
+        public InputAction @SelectFourth => m_Wrapper.m_Selector_SelectFourth;
+        public InputAction @SelectFifth => m_Wrapper.m_Selector_SelectFifth;
+        public InputAction @SelectSixth => m_Wrapper.m_Selector_SelectSixth;
+        public InputActionMap Get() { return m_Wrapper.m_Selector; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(SelectorActions set) { return set.Get(); }
+        public void SetCallbacks(ISelectorActions instance)
+        {
+            if (m_Wrapper.m_SelectorActionsCallbackInterface != null)
+            {
+                @SelectFirst.started -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectFirst;
+                @SelectFirst.performed -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectFirst;
+                @SelectFirst.canceled -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectFirst;
+                @SelectSecond.started -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectSecond;
+                @SelectSecond.performed -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectSecond;
+                @SelectSecond.canceled -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectSecond;
+                @SelectThird.started -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectThird;
+                @SelectThird.performed -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectThird;
+                @SelectThird.canceled -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectThird;
+                @SelectFourth.started -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectFourth;
+                @SelectFourth.performed -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectFourth;
+                @SelectFourth.canceled -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectFourth;
+                @SelectFifth.started -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectFifth;
+                @SelectFifth.performed -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectFifth;
+                @SelectFifth.canceled -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectFifth;
+                @SelectSixth.started -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectSixth;
+                @SelectSixth.performed -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectSixth;
+                @SelectSixth.canceled -= m_Wrapper.m_SelectorActionsCallbackInterface.OnSelectSixth;
+            }
+            m_Wrapper.m_SelectorActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @SelectFirst.started += instance.OnSelectFirst;
+                @SelectFirst.performed += instance.OnSelectFirst;
+                @SelectFirst.canceled += instance.OnSelectFirst;
+                @SelectSecond.started += instance.OnSelectSecond;
+                @SelectSecond.performed += instance.OnSelectSecond;
+                @SelectSecond.canceled += instance.OnSelectSecond;
+                @SelectThird.started += instance.OnSelectThird;
+                @SelectThird.performed += instance.OnSelectThird;
+                @SelectThird.canceled += instance.OnSelectThird;
+                @SelectFourth.started += instance.OnSelectFourth;
+                @SelectFourth.performed += instance.OnSelectFourth;
+                @SelectFourth.canceled += instance.OnSelectFourth;
+                @SelectFifth.started += instance.OnSelectFifth;
+                @SelectFifth.performed += instance.OnSelectFifth;
+                @SelectFifth.canceled += instance.OnSelectFifth;
+                @SelectSixth.started += instance.OnSelectSixth;
+                @SelectSixth.performed += instance.OnSelectSixth;
+                @SelectSixth.canceled += instance.OnSelectSixth;
+            }
+        }
+    }
+    public SelectorActions @Selector => new SelectorActions(this);
     public interface IMovementInputsActions
     {
         void OnMove(InputAction.CallbackContext context);
@@ -320,5 +529,14 @@ public partial class @PlayerInputs : IInputActionCollection2, IDisposable
     public interface IUIInputsActions
     {
         void OnInventory(InputAction.CallbackContext context);
+    }
+    public interface ISelectorActions
+    {
+        void OnSelectFirst(InputAction.CallbackContext context);
+        void OnSelectSecond(InputAction.CallbackContext context);
+        void OnSelectThird(InputAction.CallbackContext context);
+        void OnSelectFourth(InputAction.CallbackContext context);
+        void OnSelectFifth(InputAction.CallbackContext context);
+        void OnSelectSixth(InputAction.CallbackContext context);
     }
 }

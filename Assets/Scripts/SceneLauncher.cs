@@ -5,9 +5,9 @@ using UnityEngine;
 public class SceneLauncher : MonoBehaviour
 {
     [SerializeField] PlayerMovement _player;
-    private InputController _inputController;
-    private UIController _ui; 
-    private GameData _gameData;
+    [SerializeField] private UIController _ui;
+    private InputController _inputController;    
+    private PlayerData _gameData;
     
 
     private void Awake()
@@ -19,7 +19,7 @@ public class SceneLauncher : MonoBehaviour
     {
         _inputController = new InputController();
         _player.Initialize(_inputController);
-        _gameData = new GameData();
-        _ui = new UIController(_inputController,_gameData.GetInventoryData());        
+        _gameData = new PlayerData();
+        _ui.Initialize(_inputController, _gameData.GetInventoryData());        
     }
 }
