@@ -2,7 +2,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharactersPanelController : MonoBehaviour
+public class GroupPanelController : MonoBehaviour
 {
     [SerializeField] CharacterButtonController _prefab;
     private List<CharacterButtonController> _characterButtons;

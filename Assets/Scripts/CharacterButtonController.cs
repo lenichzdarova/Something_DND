@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CharacterButtonController : MonoBehaviour
 {
     public event Action<int> ButtonClick;
-    [SerializeField] private Sprite _portrait;
+    [SerializeField] private Image _portrait;
     [SerializeField] private Button _button;
     private int _buttonIndex;
 
@@ -28,7 +28,7 @@ public class CharacterButtonController : MonoBehaviour
 
     private void SetPortrait(Sprite sprite)
     {
-        _portrait = sprite;
+        _portrait.sprite = sprite;
     }
 
     private void OnClick()

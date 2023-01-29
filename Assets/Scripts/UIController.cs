@@ -13,14 +13,16 @@ using UnityEngine.InputSystem;
 public class UIController : MonoBehaviour 
 {
     private PlayerInputs.UIInputsActions _input;    
-    private InventoryUI _inventory;
+    [SerializeField] private InventoryUI _inventory;
+    [SerializeField] private GroupPanelController _groupPanel;
 
 
-    public void Initialize(IUIInputsProvider inputs, IInventoryDataProvider inventoryData)
+    public void Initialize(IUIInputsProvider inputs)
     {
         _input = inputs.GetUIInputs();
         SubscribeInputs();
-        _inventory.Initialize(inventoryData);
+        //_inventory.Initialize(inventoryData);
+        _groupPanel.Initialize(new PlayerGroup()); //GAG!!!!!!!!
     }    
     
     private void SubscribeInputs()

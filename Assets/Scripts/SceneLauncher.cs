@@ -7,8 +7,7 @@ public class SceneLauncher : MonoBehaviour
     [SerializeField] PlayerMovement _player;
     [SerializeField] private UIController _ui;
     private InputController _inputController;    
-    private PlayerData _gameData;
-    
+    private PlayerData _gameData;    
 
     private void Awake()
     {
@@ -18,8 +17,9 @@ public class SceneLauncher : MonoBehaviour
     private void Initialize()
     {
         _inputController = new InputController();
-        _player.Initialize(_inputController);
         _gameData = new PlayerData();
-        _ui.Initialize(_inputController, _gameData.GetInventoryData());        
+        
+        _player.Initialize(_inputController);        
+        _ui.Initialize(_inputController);
     }
 }
