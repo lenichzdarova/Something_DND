@@ -18,7 +18,7 @@ public class CharacterButtonController : MonoBehaviour
 
     public void Activate(Character character)
     {
-        SetPortrait(character.GetPortrait());
+        SetPortrait(character._portrait);
     }
 
     public void Deactivate() 

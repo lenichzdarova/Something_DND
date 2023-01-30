@@ -4,5 +4,5 @@ using UnityEngine;
 
 public struct CharacterStats 
 {
-    
+    public int Strength { get; set; }
 }
