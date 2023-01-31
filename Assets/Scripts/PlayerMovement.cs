@@ -4,12 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// player responsible for what?
-/// in fact - camera position, camera rotation.
-/// combat system will use player position and player collider as abstraction of player group;
-/// 
-/// player is a small system
-/// camera  - view, transfrom  - data, player - controller? What subsystem class belogs to? 
+/// nothing interesting
 /// </summary>
 
 public class PlayerMovement : MonoBehaviour

@@ -4,7 +4,7 @@ using System;
 
 public class RaceStatsProvider
 {
-    private CharacterStats GetStats(RaceType race)
+    public static CharacterStats GetStats(RaceType race)
     {
         switch (race)
         {
