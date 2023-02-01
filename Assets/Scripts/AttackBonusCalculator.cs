@@ -1,7 +1,7 @@
 ﻿
 
 
-public class AttackCalculator
+public class AttackBonusCalculator
 {
     public static int GetAttackBonus(Character character)
     {
@@ -9,6 +9,7 @@ public class AttackCalculator
         attackBonus += BaseAttackBonusProvider.GetAttackBonus(character._characterClass,character.Level);       
         attackBonus += GetStatsAttackBonus(character); //bad moment need rework
         //here we check for IAttackEffect and apply it
+        //dice roll here
         return attackBonus;
     }
 

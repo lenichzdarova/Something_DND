@@ -24,7 +24,7 @@ public class Character : IInventoryDataProvider
 {
     public readonly RaceType _characterRace;
     public readonly ClassType _characterClass;
-    public readonly CharacterStats _stats;
+    public readonly Abilities _stats;
     public readonly Sprite _portrait;
 
     public int Level { get; private set; }
