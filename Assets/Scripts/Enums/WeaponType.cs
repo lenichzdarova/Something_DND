@@ -1,0 +1,45 @@
+﻿
+public enum WeaponType
+{//simple melee
+    Club,
+    Dagger,
+    Greatclub,
+    Handaxe,
+    Javelin,
+    Light_hammer,
+    Mace,
+    Quarterstaff,
+    Sickle,
+    Spear,
+    Unurmed_strike,
+    //simple ranged
+    Crossbow_light,
+    Dart,
+    Shortbox,
+    Sling,
+    //Martial melee
+    Battleaxe,
+    Flail,
+    Glaive,
+    Greataxe,
+    Greatsword,
+    Halberd,
+    Lance,
+    Longsword,
+    Maul,
+    Morningstar,
+    Pike,
+    Rapier,
+    Scimitar,
+    Shortsword,
+    Trident,
+    War_pick,
+    Warhammer,
+    Whip,
+    // Martial ranged
+    Blowgun,
+    Crossbow_hand,
+    Crossbow_heavy,
+    Longbow,
+    Net
+}

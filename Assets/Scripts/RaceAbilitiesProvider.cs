@@ -2,9 +2,9 @@
 
 using System;
 
-public class RaceAbilitiesProvider
+static class RaceAbilitiesProvider
 {
-    public static Abilities GetStats(RaceType race)
+    public static Abilities GetAbilities(RaceType race)
     {
         switch (race)
         {
@@ -12,12 +12,12 @@ public class RaceAbilitiesProvider
                 {
                     return new Abilities
                     {
-                        Strength = 10,
-                        Dexterity= 10,
-                        Constitution = 10,
-                        Intelligence = 10,
-                        Wisdom = 10,
-                        Charisma = 10                    
+                        Strength = 11,
+                        Dexterity= 11,
+                        Constitution = 11,
+                        Intelligence = 11,
+                        Wisdom = 11,
+                        Charisma = 11                    
                     };
                 }
             case RaceType.Half_Ork:

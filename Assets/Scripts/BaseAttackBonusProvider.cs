@@ -1,6 +1,6 @@
 ﻿
 
-public class BaseAttackBonusProvider
+static class BaseAttackBonusProvider
 {
     private const float HIGH_PROGRESSION = 1f;
     private const float MEDIUM_PROGRESSION = 0.75f;
