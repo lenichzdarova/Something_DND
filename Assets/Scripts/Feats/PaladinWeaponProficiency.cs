@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class FighterWeaponProficiency : CharacterFeat, ICharacterFeatsProvider
+public class PaladinWeaponProficiency : CharacterFeat, ICharacterFeatsProvider
 {
     public List<CharacterFeat> GetCharacterFeats()
     {

@@ -1,7 +1,7 @@
 ﻿
 
 using System.Collections.Generic;
-
+/*
 public class ClassFeatsProvider : ICharacterFeatsProvider
 {
     private readonly ClassType _classType;
@@ -15,4 +15,4 @@ public class ClassFeatsProvider : ICharacterFeatsProvider
     {
 
     }
-}
+}*/
