@@ -1,15 +1,16 @@
 ﻿
 using System.Collections.Generic;
 
-public class FighterWeaponProficiency: CharacterFeat, IWeaponProficiencyProvider
+public class FighterWeaponProficiency: CharacterFeat, ICharacterFeatsProvider
 {
-    public List<WeaponType> GetWeaponTypes()
+    public List<CharacterFeat> GetCharacterFeats()
     {
-        IWeaponProficiencyProvider simple = new SimpleWeaponProficiency();
-        IWeaponProficiencyProvider martial= new MartialWeaponProficiency();
-        List<WeaponType> simpleWeapons = simple.GetWeaponTypes();
-        List<WeaponType> martialWeapons = martial.GetWeaponTypes();
-        simpleWeapons.AddRange(martialWeapons);
-        return simpleWeapons;
+        List<CharacterFeat> feats = new()
+        {
+            new SimpleWeaponProficiency(),
+            new MartialWeaponProficiency()
+        };
+               
+        return feats;
     }
 }
