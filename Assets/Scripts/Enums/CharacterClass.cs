@@ -1,4 +1,4 @@
-public enum ClassType 
+public enum CharacterClass 
 {
     Fighter,
     Rogue,

@@ -10,11 +10,5 @@ using UnityEngine;
 /// </summary>
 public class NonPlayerCharacter: MonoBehaviour
 {
-    private Character _character;    
-
-    public void Initialize()
-    {
-        _character = new Character();        
-    }
-
+    private Character _character;
 }

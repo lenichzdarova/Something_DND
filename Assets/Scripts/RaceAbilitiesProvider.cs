@@ -4,11 +4,11 @@ using System;
 
 static class RaceAbilitiesProvider
 {
-    public static Abilities GetAbilities(RaceType race)
+    public static Abilities GetAbilities(Race race)
     {
         switch (race)
         {
-            case RaceType.Human:
+            case Race.Human:
                 {
                     return new Abilities
                     {
@@ -20,7 +20,7 @@ static class RaceAbilitiesProvider
                         Charisma = 11                    
                     };
                 }
-            case RaceType.Half_Ork:
+            case Race.Half_Ork:
                 {
                     return new Abilities
                     {
@@ -32,7 +32,7 @@ static class RaceAbilitiesProvider
                         Charisma = 10
                     };
                 }
-            case RaceType.Elf:
+            case Race.Elf:
                 {
                     return new Abilities
                     {
@@ -44,7 +44,7 @@ static class RaceAbilitiesProvider
                         Charisma = 10
                     };
                 }
-            case RaceType.Dwarf:
+            case Race.Dwarf:
                 {
                     return new Abilities
                     {
@@ -56,7 +56,7 @@ static class RaceAbilitiesProvider
                         Charisma = 10
                     };
                 }
-            case RaceType.Halfling:
+            case Race.Halfling:
                 {
                     return new Abilities
                     {
@@ -68,7 +68,7 @@ static class RaceAbilitiesProvider
                         Charisma = 10
                     };
                 }
-            case RaceType.Gnome:
+            case Race.Gnome:
                 {
                     return new Abilities
                     {

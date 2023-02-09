@@ -1,4 +1,4 @@
-public enum RaceType 
+public enum Race 
 {
     Human,
     Half_Ork,

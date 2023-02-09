@@ -9,6 +9,10 @@ public class Health
     private int _maxHealth;
     private int _currentHealth;
 
+    public Health() 
+    {        
+    }
+
     public void AddHealth(int health)
     {
         _currentHealth -= health;
@@ -34,5 +38,5 @@ public class Health
     public int GetMaxHealth()
     {
         return _maxHealth;
-    }
+    }    
 }

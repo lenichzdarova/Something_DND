@@ -22,12 +22,21 @@ using UnityEngine;
 
 public class Character : IInventoryDataProvider
 {
-    public readonly RaceType _characterRace;
-    public readonly ClassType _characterClass;
+    public readonly Race _characterRace;
+    public readonly CharacterClass _characterClass;
     public readonly Abilities _abilities;
     public readonly Sprite _portrait;
 
     public int Level { get; private set; }
 
-    private readonly Health _health;    
+    private readonly Health _health;  
+    
+    public Character(Race race, CharacterClass characterClass, Abilities abilities)
+    {
+        _characterRace = race;
+        _characterClass = characterClass;
+        _abilities = abilities;
+        _portrait = default(Sprite);
+        _health = new Health();
+    }
 }

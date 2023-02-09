@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -13,8 +14,8 @@ public class SceneLauncher : MonoBehaviour
 {
     [SerializeField] PlayerMovement _player;
     [SerializeField] private UIController _ui;
-    private InputController _inputController;    
-    private PlayerData _gameData;
+    private InputController _inputController;
+    private PlayerGroup _playerGroup;
 
     private Coroutine _gameUpdate;
 
@@ -26,11 +27,10 @@ public class SceneLauncher : MonoBehaviour
     private void Initialize()
     {
         _inputController = new InputController();
-        _gameData = new PlayerData();
-        
+        _playerGroup = CreateTestPlayerGroup();
+
         _player.Initialize(_inputController);        
         _ui.Initialize(_inputController);
-
         _gameUpdate = StartCoroutine(GameUpdate());
     }
 
@@ -40,5 +40,13 @@ public class SceneLauncher : MonoBehaviour
         {
             yield return null;
         }
+    }
+
+    private PlayerGroup CreateTestPlayerGroup()
+    {
+        PlayerGroup playerGroup = new PlayerGroup();
+        playerGroup.AddCharacter(new Character(Race.Human,CharacterClass.Fighter,
+            RaceAbilitiesProvider.GetAbilities(Race.Human)));
+        return playerGroup;
     }
 }
