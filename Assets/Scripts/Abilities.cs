@@ -24,4 +24,35 @@ public struct Abilities
         };
     }
 
+    public int GetStrengthBonus()
+    {
+        return AbilityBonusCalculation(Strength);
+    }
+    public int GetDexterityBonus()
+    {
+        return AbilityBonusCalculation(Dexterity);
+    }
+    public int GetConstitutionBonus()
+    {
+        return AbilityBonusCalculation(Constitution);
+    }
+    public int GetIntelligenceBonus()
+    {
+        return AbilityBonusCalculation(Intelligence);
+    }
+    public int GetWisdomBonus()
+    {
+        return AbilityBonusCalculation(Wisdom);
+    }
+    public int GetCharismaBonus()
+    {
+        return AbilityBonusCalculation(Charisma);
+    }
+
+
+    private int AbilityBonusCalculation(int abilityValue)
+    {
+        return (abilityValue - 10) / 2;
+    }
+
 }
