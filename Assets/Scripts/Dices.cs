@@ -35,6 +35,6 @@ public struct Dices
 
     public override string ToString()
     {
-        return $"{_rolls}d{this._faces}";
+        return $"{_rolls}d{_faces}";
     }
 }
