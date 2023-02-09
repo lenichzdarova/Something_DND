@@ -45,8 +45,8 @@ public class SceneLauncher : MonoBehaviour
     private PlayerGroup CreateTestPlayerGroup()
     {
         PlayerGroup playerGroup = new PlayerGroup();
-        playerGroup.AddCharacter(new Character(Race.Human,CharacterClass.Fighter,
-            RaceAbilitiesProvider.GetAbilities(Race.Human)));
+        playerGroup.AddCharacter(new Character(RaceEnum.Human,ClassEnum.Fighter,
+            RaceAbilitiesProvider.GetAbilities(RaceEnum.Human)));
         return playerGroup;
     }
 }

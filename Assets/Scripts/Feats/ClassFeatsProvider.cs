@@ -4,11 +4,11 @@ using System.Collections.Generic;
 /*
 public class ClassFeatsProvider : ICharacterFeatsProvider
 {
-    private readonly ClassType _classType;
+    private readonly CharacterClass _characterClass;
 
-    public ClassFeatsProvider(ClassType classType)
+    public ClassFeatsProvider(CharacterClass characterClass)
     {
-        _classType = classType;
+        _characterClass = characterClass;
     }
     
     public List<CharacterFeat> GetCharacterFeats()

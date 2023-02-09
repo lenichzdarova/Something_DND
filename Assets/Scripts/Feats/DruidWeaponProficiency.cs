@@ -2,20 +2,20 @@
 
 public class DruidWeaponProficiency : CharacterFeat, IWeaponProficiencyProvider
 {
-    public List<WeaponType> GetWeaponTypes()
+    public List<WeaponEnum> GetWeaponTypes()
     {
-        List<WeaponType> weapons = new()
+        List<WeaponEnum> weapons = new()
         {
-            WeaponType.Club,
-            WeaponType.Dagger,
-            WeaponType.Dart,
-            WeaponType.Javelin,
-            WeaponType.Mace,
-            WeaponType.Quarterstaff,
-            WeaponType.Scimitar,
-            WeaponType.Sickle,
-            WeaponType.Sling,
-            WeaponType.Spear
+            WeaponEnum.Club,
+            WeaponEnum.Dagger,
+            WeaponEnum.Dart,
+            WeaponEnum.Javelin,
+            WeaponEnum.Mace,
+            WeaponEnum.Quarterstaff,
+            WeaponEnum.Scimitar,
+            WeaponEnum.Sickle,
+            WeaponEnum.Sling,
+            WeaponEnum.Spear
 
         };
         return weapons;

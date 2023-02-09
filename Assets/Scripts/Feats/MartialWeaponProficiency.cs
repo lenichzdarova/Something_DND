@@ -3,34 +3,34 @@ using System.Collections.Generic;
 
 public class MartialWeaponProficiency: CharacterFeat, IWeaponProficiencyProvider
 {
-    public List<WeaponType> GetWeaponTypes()
+    public List<WeaponEnum> GetWeaponTypes()
     {
-        return new List<WeaponType>()
+        return new List<WeaponEnum>()
         {//melee
-            WeaponType.Battleaxe,
-            WeaponType.Flail,
-            WeaponType.Glaive,
-            WeaponType.Greataxe,
-            WeaponType.Greatsword,
-            WeaponType.Halberd,
-            WeaponType.Lance,
-            WeaponType.Longsword,
-            WeaponType.Maul,
-            WeaponType.Morningstar,
-            WeaponType.Pike,
-            WeaponType.Rapier,
-            WeaponType.Scimitar,
-            WeaponType.Shortsword,
-            WeaponType.Trident,
-            WeaponType.War_pick,
-            WeaponType.Warhammer,
-            WeaponType.Whip,
+            WeaponEnum.Battleaxe,
+            WeaponEnum.Flail,
+            WeaponEnum.Glaive,
+            WeaponEnum.Greataxe,
+            WeaponEnum.Greatsword,
+            WeaponEnum.Halberd,
+            WeaponEnum.Lance,
+            WeaponEnum.Longsword,
+            WeaponEnum.Maul,
+            WeaponEnum.Morningstar,
+            WeaponEnum.Pike,
+            WeaponEnum.Rapier,
+            WeaponEnum.Scimitar,
+            WeaponEnum.Shortsword,
+            WeaponEnum.Trident,
+            WeaponEnum.War_pick,
+            WeaponEnum.Warhammer,
+            WeaponEnum.Whip,
             //ranged
-            WeaponType.Blowgun,
-            WeaponType.Crossbow_hand,
-            WeaponType.Crossbow_heavy,
-            WeaponType.Longbow,
-            WeaponType.Net
+            WeaponEnum.Blowgun,
+            WeaponEnum.Crossbow_hand,
+            WeaponEnum.Crossbow_heavy,
+            WeaponEnum.Longbow,
+            WeaponEnum.Net
         };
     }
 }

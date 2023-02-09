@@ -12,14 +12,14 @@ public class RogueWeaponProficiency : CharacterFeat, ICharacterFeatsProvider, IW
         return feats;
     }
 
-    public List<WeaponType> GetWeaponTypes()
+    public List<WeaponEnum> GetWeaponTypes()
     {
-        List<WeaponType> weapons = new()
+        List<WeaponEnum> weapons = new()
         {
-            WeaponType.Longsword,
-            WeaponType.Shortsword,
-            WeaponType.Rapier,
-            WeaponType.Crossbow_hand
+            WeaponEnum.Longsword,
+            WeaponEnum.Shortsword,
+            WeaponEnum.Rapier,
+            WeaponEnum.Crossbow_hand
         };
         return weapons;
     }

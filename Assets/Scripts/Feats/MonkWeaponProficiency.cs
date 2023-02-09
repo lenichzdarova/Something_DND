@@ -12,11 +12,11 @@ public class MonkWeaponProficiency : CharacterFeat, ICharacterFeatsProvider, IWe
         return feats;
     }
 
-    public List<WeaponType> GetWeaponTypes()
+    public List<WeaponEnum> GetWeaponTypes()
     {
-        List<WeaponType> weapons = new()
+        List<WeaponEnum> weapons = new()
         {            
-            WeaponType.Shortsword            
+            WeaponEnum.Shortsword            
         };
         return weapons;
     }

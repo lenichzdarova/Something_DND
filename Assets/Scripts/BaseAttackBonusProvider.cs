@@ -7,18 +7,18 @@ static class BaseAttackBonusProvider
     private const float LOW_PROGRESSION = 0.5f;
 
 
-    public static int GetAttackBonus(CharacterClass characterClass, int characterLevel)
+    public static int GetAttackBonus(ClassEnum characterClass, int characterLevel)
     {
         int baseAttackBonus = 0;
-        if(characterClass == CharacterClass.Fighter)
+        if(characterClass == ClassEnum.Fighter)
         {
             baseAttackBonus = (int)(HIGH_PROGRESSION * characterLevel);
         }
-        if(characterClass == CharacterClass.Rogue)
+        if(characterClass == ClassEnum.Rogue)
         {
             baseAttackBonus = (int)(MEDIUM_PROGRESSION * characterLevel);
         }
-        if(characterClass == CharacterClass.Wizard)
+        if(characterClass == ClassEnum.Wizard)
         {
             baseAttackBonus = (int)(LOW_PROGRESSION * characterLevel);
         }

@@ -5,27 +5,27 @@ using System.Collections.Generic;
 
 public class SimpleWeaponProficiency : CharacterFeat, IWeaponProficiencyProvider
 {
-    public List<WeaponType> GetWeaponTypes()
+    public List<WeaponEnum> GetWeaponTypes()
     {
-        return new List<WeaponType>()
+        return new List<WeaponEnum>()
         {
             //simple melee
-            WeaponType.Club,
-            WeaponType.Dagger,
-            WeaponType.Greatclub,
-            WeaponType.Handaxe,
-            WeaponType.Javelin,
-            WeaponType.Light_hammer,
-            WeaponType.Mace,
-            WeaponType.Quarterstaff,
-            WeaponType.Sickle,
-            WeaponType.Spear,
-            WeaponType.Unurmed_strike,
+            WeaponEnum.Club,
+            WeaponEnum.Dagger,
+            WeaponEnum.Greatclub,
+            WeaponEnum.Handaxe,
+            WeaponEnum.Javelin,
+            WeaponEnum.Light_hammer,
+            WeaponEnum.Mace,
+            WeaponEnum.Quarterstaff,
+            WeaponEnum.Sickle,
+            WeaponEnum.Spear,
+            WeaponEnum.Unurmed_strike,
             //simple ranged
-            WeaponType.Crossbow_light,
-            WeaponType.Dart,
-            WeaponType.Shortbox,
-            WeaponType.Sling
+            WeaponEnum.Crossbow_light,
+            WeaponEnum.Dart,
+            WeaponEnum.Shortbox,
+            WeaponEnum.Sling
         };
     }
 }
