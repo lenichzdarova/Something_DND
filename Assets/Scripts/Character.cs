@@ -1,34 +1,21 @@
+
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Character is a container of basic character data;
-/// No attack, no damage, no armor or some shit like this.
-/// All characters composite statistic must be provide by servises.
-/// How it works - attackProviderServise,as axample:
-/// its is static class.
-/// he call baseattackbonusprovider - get class and level and return base attackbonus
-/// call stats provider - he calculate character stats and return bonus of strength
-/// call effectshandler nad get bonuses from it
-/// return sum
-/// 
-/// about effectsHandler
-/// how effects system work.
-/// effect - possybly abstract class;
-/// character equip +1 sword and add weaponbonusplusone to effects collection.
-/// This effect inherit from two interfaces - IattackEffect and IdamageEffect
-/// AttackProviderServise, as example, search iattackeffect in callection and use it.
-/// 
+///Chracter class problems
+/// Lots of repeating calculations. almost all character stats need to calculate abilities etc.
+/// This should not affect perfomance but looks shitty.
 /// </summary>
 
-public class Character : IInventoryDataProvider
+public class Character : IInventoryProvider, IAttackProvider, IDamageProvider, ISavingThrowsProvider, IAbilitiesProvider, ICharacterFeatsProvider
 {
-    public readonly RaceEnum _characterRace;
-    public readonly ClassEnum _characterClass;
-    public readonly Abilities _abilities;
-    public readonly Sprite _portrait;
+    private RaceEnum _characterRace;
+    private ClassEnum _characterClass;
+    private Abilities _abilities;
+    public Sprite Portrait { get; private set; }    
 
     public LevelProgress _levelProgress;
-
     private readonly Health _health;  
     
     public Character(RaceEnum race, ClassEnum characterClass, Abilities abilities)
@@ -36,7 +23,46 @@ public class Character : IInventoryDataProvider
         _characterRace = race;
         _characterClass = characterClass;
         _abilities = abilities;
-        _portrait = default(Sprite);
-        _health = new Health();
+        Portrait = default;
+        _health = new Health(characterClass,abilities);
+    }
+
+    public Abilities GetAbilities()
+    {
+        Abilities result = _abilities;
+        //sum IabilitiesProvider from effects and feats
+        return result;
+    }    
+
+    public int GetAttack()
+    {
+        int attackBonus = 0;
+        attackBonus += BaseAttackBonusProvider.GetAttackBonus(_characterClass, 
+            _levelProgress.CurrentLevel);
+        attackBonus += AbilitiesAttackBonusProvider.GetAttackBonus(GetAbilities());
+        //here we check for IAttackProvider effects and apply it        
+        return attackBonus;
+    }
+
+    public int GetArmor()
+    {
+        int result = 0;
+        //armor
+        //
+
+        return result;
+    }
+
+    public SavingThrows GetSavingThrows()
+    {
+        SavingThrows result = new SavingThrows();
+        return result;
+    }
+
+    public List<CharacterFeat> GetCharacterFeats()
+    {
+        List<CharacterFeat> feats = RaceFeatsProvider.GetFeats(_characterRace);
+        feats.AddRange(ClassFeatsProvider.GetFeats(_characterClass, _levelProgress.CurrentLevel));
+        return feats;
     }
 }
