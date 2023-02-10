@@ -30,6 +30,14 @@ public class Character : IInventoryProvider, IAttackProvider, IDamageProvider, I
     public Abilities GetAbilities()
     {
         Abilities result = _abilities;
+        var feats = GetCharacterFeats();
+        foreach ( var feat in feats )
+        {
+            if (feat is IAbilitiesProvider provider)
+            {
+                result += provider.GetAbilities();
+            }
+        }
         //sum IabilitiesProvider from effects and feats
         return result;
     }    
@@ -40,6 +48,14 @@ public class Character : IInventoryProvider, IAttackProvider, IDamageProvider, I
         attackBonus += BaseAttackBonusProvider.GetAttackBonus(_characterClass, 
             _levelProgress.CurrentLevel);
         attackBonus += AbilitiesAttackBonusProvider.GetAttackBonus(GetAbilities());
+        var feats = GetCharacterFeats();
+        foreach (var feat in feats)
+        {
+            if (feat is IAttackProvider provider)
+            {
+                attackBonus += provider.GetAttack();
+            }
+        }
         //here we check for IAttackProvider effects and apply it        
         return attackBonus;
     }
