@@ -1,11 +1,10 @@
 ﻿
 
-static class AbilitiesAttackBonusProvider
+static class AbilitiesAttackBonusProvider 
 {
-    public static int GetAttackBonus(Character character)
+    public static int GetAttackBonus(Abilities abilities)
     {
-        int attackBonus = 0;
-        Abilities abilities = AbiltiesCalculator.GetAbilities(character);
+        int attackBonus = 0;        
         //depends on attack type we take abilitie bonus
 
         return attackBonus;

@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class InventoryUI : MonoBehaviour
 {
-    public void Initialize(IInventoryDataProvider inventory)
+    public void Initialize(IInventoryProvider inventory)
     {
         
     }

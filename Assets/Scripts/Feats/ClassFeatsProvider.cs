@@ -1,18 +1,12 @@
 ﻿
 
 using System.Collections.Generic;
-/*
-public class ClassFeatsProvider : ICharacterFeatsProvider
-{
-    private readonly CharacterClass _characterClass;
 
-    public ClassFeatsProvider(CharacterClass characterClass)
+public static class ClassFeatsProvider
+{        
+    public static List<CharacterFeat> GetFeats( ClassEnum characterClass, int level)
     {
-        _characterClass = characterClass;
+        List<CharacterFeat> feats= new List<CharacterFeat>();
+        return feats;
     }
-    
-    public List<CharacterFeat> GetCharacterFeats()
-    {
-
-    }
-}*/
+}
