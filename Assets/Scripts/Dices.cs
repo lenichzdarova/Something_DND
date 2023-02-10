@@ -9,8 +9,8 @@ public struct Dices
 
     public Dices(int rolls, int faces)
     {
-        this._rolls = rolls;
-        this._faces = faces;
+        _rolls = rolls;
+        _faces = faces;
     }
     public int Roll()
     {
