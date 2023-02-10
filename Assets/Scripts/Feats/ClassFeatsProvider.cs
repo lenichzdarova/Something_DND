@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public static class ClassFeatsProvider
 {        
-    public static List<CharacterFeat> GetFeats( ClassEnum characterClass, int level)
+    public static List<Feat> GetFeats( ClassEnum characterClass, int level)
     {
-        List<CharacterFeat> feats= new List<CharacterFeat>();
+        List<Feat> feats= new List<Feat>();
         return feats;
     }
 }

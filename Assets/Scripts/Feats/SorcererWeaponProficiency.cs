@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class SorcererWeaponProficiency : CharacterFeat, IWeaponProficiencyProvider
+public class SorcererWeaponProficiency : Feat, IWeaponProficiencyProvider
 {   
 
     public List<WeaponEnum> GetWeaponTypes()

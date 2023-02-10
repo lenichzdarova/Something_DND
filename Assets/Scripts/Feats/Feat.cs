@@ -3,7 +3,7 @@
 /// every feat character feat must inherit special interface like IWeaponProvider, IStatsProvider etc
 /// by this interface gameservices can take needed data in case of it role like AttackBonusCalculator must sort feats inherited IAttackBonusProvider 
 /// </summary>
-public abstract class CharacterFeat
+public abstract class Feat
 {
     
 }

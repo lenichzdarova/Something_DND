@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-public class DruidWeaponProficiency : CharacterFeat, IWeaponProficiencyProvider
+public class DruidWeaponProficiency : Feat, IWeaponProficiencyProvider
 {
     public List<WeaponEnum> GetWeaponTypes()
     {

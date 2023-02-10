@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-public class PaladinWeaponProficiency : CharacterFeat, ICharacterFeatsProvider
+public class PaladinWeaponProficiency : Feat, ICharacterFeatsProvider
 {
-    public List<CharacterFeat> GetCharacterFeats()
+    public List<Feat> GetCharacterFeats()
     {
-        List<CharacterFeat> feats = new()
+        List<Feat> feats = new()
         {
             new SimpleWeaponProficiency(),
             new MartialWeaponProficiency()

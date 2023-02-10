@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-public class MonkWeaponProficiency : CharacterFeat, ICharacterFeatsProvider, IWeaponProficiencyProvider
+public class MonkWeaponProficiency : Feat, ICharacterFeatsProvider, IWeaponProficiencyProvider
 {
-    public List<CharacterFeat> GetCharacterFeats()
+    public List<Feat> GetCharacterFeats()
     {
-        List<CharacterFeat> feats = new()
+        List<Feat> feats = new()
         {
             new SimpleWeaponProficiency()
         };

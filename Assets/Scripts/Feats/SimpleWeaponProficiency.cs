@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 
-public class SimpleWeaponProficiency : CharacterFeat, IWeaponProficiencyProvider
+public class SimpleWeaponProficiency : Feat, IWeaponProficiencyProvider
 {
     public List<WeaponEnum> GetWeaponTypes()
     {

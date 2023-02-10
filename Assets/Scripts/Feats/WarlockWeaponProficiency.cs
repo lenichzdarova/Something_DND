@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
-public class WarlocWeaponProficiency : CharacterFeat, ICharacterFeatsProvider
+public class WarlocWeaponProficiency : Feat, ICharacterFeatsProvider
 {
-    public List<CharacterFeat> GetCharacterFeats()
+    public List<Feat> GetCharacterFeats()
     {
-        List<CharacterFeat> feats = new()
+        List<Feat> feats = new()
         {
             new SimpleWeaponProficiency()
         };

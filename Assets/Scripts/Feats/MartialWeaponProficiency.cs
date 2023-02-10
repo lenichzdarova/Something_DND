@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-public class MartialWeaponProficiency: CharacterFeat, IWeaponProficiencyProvider
+public class MartialWeaponProficiency: Feat, IWeaponProficiencyProvider
 {
     public List<WeaponEnum> GetWeaponTypes()
     {
