@@ -1,8 +1,7 @@
 
 using System.Collections.Generic;
-using UnityEditor.VersionControl;
 using UnityEngine;
-using UnityEngine.Profiling;
+
 
 /// <summary>
 ///Chracter class problems
@@ -10,11 +9,10 @@ using UnityEngine.Profiling;
 /// This should not affect perfomance but looks shitty.
 /// </summary>
 
-public class Character : IInventoryProvider, IAttackProvider, IDamageProvider, ISavingThrowsProvider, IAbilitiesProvider
+public class Character 
 {
     private RaceEnum _characterRace;
-    private ClassEnum _characterClass;
-    private Abilities _abilities;
+    private ClassEnum _characterClass;    
     public Sprite Portrait { get; private set; }    
 
     public LevelProgress _levelProgress;
@@ -30,7 +28,9 @@ public class Character : IInventoryProvider, IAttackProvider, IDamageProvider, I
         _characterRace = race;
         _characterClass = characterClass;        
         Portrait = default;
-        _featsHandler = new FeatsHandler(race, characterClass);
+        _featsHandler = new FeatsHandler();
+        _featsHandler.AddFeat(RaceFeatsProvider.GetFeats(race));
+        _featsHandler.AddFeat(ClassFeatsProvider.GetFeats(characterClass, _levelProgress.CurrentLevel));        
         _abilitiesHandler = new AbilitiesHandler(abilities, _featsHandler);
         _health = new Health(characterClass,abilities);                
     }
@@ -38,7 +38,12 @@ public class Character : IInventoryProvider, IAttackProvider, IDamageProvider, I
     public Abilities GetAbilities()
     {
         return _abilitiesHandler.GetAbilities();
-    }    
+    }  
+    
+    public List<Feat> GetFeats()
+    {
+        return _featsHandler.Feats;
+    }
 
     public int GetAttack()
     {
