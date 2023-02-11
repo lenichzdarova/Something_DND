@@ -9,12 +9,9 @@ public class FeatsHandler
     private List<Feat> _feats;
     public List<Feat> Feats { get => _feats; }
 
-    public FeatsHandler(RaceEnum race, ClassEnum characterClass)//fists lvl character constructor
-    {
-        int characterLevel = 1;
-        _feats = new List<Feat>();
-        _feats.AddRange(RaceFeatsProvider.GetFeats(race));
-        _feats.AddRange(ClassFeatsProvider.GetFeats(characterClass, characterLevel));
+    public FeatsHandler()
+    {        
+        _feats = new List<Feat>();        
     }
 
     public void AddFeat(List<Feat> feats)
