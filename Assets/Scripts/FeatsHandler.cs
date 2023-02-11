@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class FeatsHandler
 {
+    public event Action Changed;
+
     private List<Feat> _feats;
     public List<Feat> Feats { get => _feats; }
 
@@ -18,24 +20,28 @@ public class FeatsHandler
     public void AddFeat(List<Feat> feats)
     {
         _feats.AddRange(feats);
+        Changed?.Invoke();
     }
 
     public void AddFeat(Feat feat)
     {
         _feats.Add(feat);
+        Changed?.Invoke();
     }
 
     public void RemoveFeat(Feat feat)
     {        
         _feats.Remove(feat);
+        Changed?.Invoke();
     }
 
     public void RemoveFeat(List<Feat> feats)
     {
         foreach(var feat in feats)
         {
-            _feats.Remove(feat);
+            _feats.Remove(feat);            
         }
+        Changed?.Invoke();
     }
 
     public List<IAbilitiesProvider> GetAbilitiesFeats() 
@@ -89,6 +95,4 @@ public class FeatsHandler
         }
         return result;
     }
-
-
 }
