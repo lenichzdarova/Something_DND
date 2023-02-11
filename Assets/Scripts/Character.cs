@@ -21,29 +21,23 @@ public class Character : IInventoryProvider, IAttackProvider, IDamageProvider, I
     private readonly Health _health;
 
     private FeatsHandler _featsHandler;
+    private AbilitiesHandler _abilitiesHandler;
 
     
     
     public Character(RaceEnum race, ClassEnum characterClass, Abilities abilities) //first lvl character constructor
     {
         _characterRace = race;
-        _characterClass = characterClass;
-        _abilities = abilities;
+        _characterClass = characterClass;        
         Portrait = default;
         _featsHandler = new FeatsHandler(race, characterClass);
+        _abilitiesHandler = new AbilitiesHandler(abilities, _featsHandler);
         _health = new Health(characterClass,abilities);                
     }
 
     public Abilities GetAbilities()
     {
-        Abilities result = _abilities;
-        var feats = _featsHandler.GetAbilitiesFeats();
-        foreach ( var feat in feats )
-        {
-            result += feat.GetAbilities();
-        }
-        //sum IabilitiesProvider from effects and feats
-        return result;
+        return _abilitiesHandler.GetAbilities();
     }    
 
     public int GetAttack()
