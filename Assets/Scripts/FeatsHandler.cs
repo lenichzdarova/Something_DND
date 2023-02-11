@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class FeatsHandler
 {
     private List<Feat> _feats;
+    public List<Feat> Feats { get => _feats; }
 
     public FeatsHandler(RaceEnum race, ClassEnum characterClass)//fists lvl character constructor
     {
@@ -11,6 +12,16 @@ public class FeatsHandler
         _feats = new List<Feat>();
         _feats.AddRange(RaceFeatsProvider.GetFeats(race));
         _feats.AddRange(ClassFeatsProvider.GetFeats(characterClass, characterLevel));
+    }
+
+    public void AddFeat(Feat feat)
+    {
+        _feats.Add(feat);
+    }
+
+    public void RemoveFeat(Feat feat)
+    {
+        _feats.Remove(feat);
     }
 
     public List<IAbilitiesProvider> GetAbilitiesFeats() 
