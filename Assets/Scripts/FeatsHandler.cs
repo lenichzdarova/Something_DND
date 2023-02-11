@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 
 public class FeatsHandler
@@ -14,14 +15,27 @@ public class FeatsHandler
         _feats.AddRange(ClassFeatsProvider.GetFeats(characterClass, characterLevel));
     }
 
+    public void AddFeat(List<Feat> feats)
+    {
+        _feats.AddRange(feats);
+    }
+
     public void AddFeat(Feat feat)
     {
         _feats.Add(feat);
     }
 
     public void RemoveFeat(Feat feat)
-    {
+    {        
         _feats.Remove(feat);
+    }
+
+    public void RemoveFeat(List<Feat> feats)
+    {
+        foreach(var feat in feats)
+        {
+            _feats.Remove(feat);
+        }
     }
 
     public List<IAbilitiesProvider> GetAbilitiesFeats() 
