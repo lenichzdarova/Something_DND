@@ -9,12 +9,10 @@ public class AbilitiesHandler
     private Abilities _baseAbilities; //pure value without any effects
     private Abilities _finalValue;
 
-    public AbilitiesHandler(Abilities baseAbilities, FeatsHandler featsHandler)
-    {
-        _baseAbilities= baseAbilities;
+    public AbilitiesHandler(FeatsHandler featsHandler)
+    {       
         _featsHandler= featsHandler;
-        _featsHandler.Changed += OnChange;
-        Calculate();
+        _featsHandler.Changed += OnChange;        
     }
 
     public void AddAbilities(Abilities abilities)

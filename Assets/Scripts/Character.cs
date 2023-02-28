@@ -18,10 +18,11 @@ public class Character
     public LevelProgress _levelProgress;
     private readonly Health _health;
 
-    private FeatsHandler _featsHandler;
     private AbilitiesHandler _abilitiesHandler;
-
-    
+    private ArmorHandler _armorHandler;
+    private AttackHandler _attackHandler;
+    private FeatsHandler _featsHandler;      
+    private SavingThrowsHandler _savingThrowsHandler;    
     
     public Character(RaceEnum race, ClassEnum characterClass, Abilities abilities) //first lvl character constructor
     {
@@ -31,7 +32,8 @@ public class Character
         _featsHandler = new FeatsHandler();
         _featsHandler.AddFeat(RaceFeatsProvider.GetFeats(race));
         _featsHandler.AddFeat(ClassFeatsProvider.GetFeats(characterClass, _levelProgress.CurrentLevel));        
-        _abilitiesHandler = new AbilitiesHandler(abilities, _featsHandler);
+        _abilitiesHandler = new AbilitiesHandler( _featsHandler);
+        _abilitiesHandler.AddAbilities(abilities);
         _health = new Health(characterClass,abilities);                
     }
 
@@ -61,21 +63,11 @@ public class Character
 
     public int GetArmor()
     {
-        int result = 0;
-        //armor
-        //
-
-        return result;
+        return _armorHandler.GetArmor();
     }
 
     public SavingThrows GetSavingThrows()
-    {
-        SavingThrows result = new SavingThrows();
-        var feats = _featsHandler.GetSavingThrowFeats();
-        foreach (var feat in feats)
-        {
-            result += feat.GetSavingThrows();
-        }
-        return result;
+    {       
+        return _savingThrowsHandler.GetSavingThrows();
     }    
 }
